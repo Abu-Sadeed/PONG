@@ -27,3 +27,8 @@ class Scoreboard(Turtle):
     def r_score_update(self):
         self.r_score += 1
         self.update_scoreboard()
+
+    def game_over(self, winner):
+        self.goto(0, 0)
+        self.write(f"GAME OVER WINNER IS {winner}", align="center", font=(
+            "Courier", 20, "normal"))

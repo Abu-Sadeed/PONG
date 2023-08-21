@@ -45,4 +45,9 @@ while game_on:
         ball.dx *= -1
         scoreboard.r_score_update()
 
+    if scoreboard.r_score >= 10 or scoreboard.l_score >= 10:
+        game_on = False
+        scoreboard.game_over(
+            "Player L" if scoreboard.l_score >= 10 else "Player R")
+
 screen.exitonclick()

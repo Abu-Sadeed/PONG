@@ -26,7 +26,7 @@ game_on = True
 
 while game_on:
     screen.update()
-    time.sleep(0.1)
+    time.sleep(ball.move_speed)
     ball.move()
 
     if ball.ycor() > 280 or ball.ycor() < -280:
@@ -38,11 +38,13 @@ while game_on:
     if ball.xcor() > 400:
         ball.goto(0, 0)
         ball.dx *= -1
+        ball.move_speed *= 0.9
         scoreboard.l_score_update()
 
     if ball.xcor() < -400:
         ball.goto(0, 0)
         ball.dx *= -1
+        ball.move_speed *= 0.9
         scoreboard.r_score_update()
 
     if scoreboard.r_score >= 10 or scoreboard.l_score >= 10:

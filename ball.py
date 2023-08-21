@@ -14,6 +14,7 @@ class Ball(Turtle):
         self.goto(position)
         self.dx = dx
         self.dy = dy
+        self.move_speed = 0.1
 
     def move(self):
         self.goto(self.xcor() + self.dx, self.ycor() + self.dy)
